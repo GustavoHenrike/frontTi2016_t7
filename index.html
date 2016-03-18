@@ -12,6 +12,10 @@
         margin-left: auto;
         text-align: center;
       }
+
+   li {
+      	list-style: none;
+      }
       </style>
   </head>
   <body ng-controller="controllerCrud">
@@ -26,12 +30,22 @@
            <td>{{contato.nome}}</td>
            <td>{{contato.telefone}}</td>
            <td><button class="btn btn-danger" ng-click="remove($index)">Excluir</button></td>
+           <td><button class="btn btn-warning" ng-click="editar(contato)">Editar</button></td>
          </tr>
        </table>
         <hr/>
-        <input class="form-control" type="text" ng-model="contato.nome"></input>
-         <input class="form-control" type="text" ng-model="contato.telefone"></input>
-         <button class="btn btn-primary" ng-click="adicionarContato(contato)" ng-disabled="!contato.nome || !contato.telefone">Adicionar Contato</button>
+        	<div ng-show="!current.nome">
+	        <input class="form-control" type="text" ng-model="contato.nome"></input>
+	         <input class="form-control" type="text" ng-model="contato.telefone"></input>
+	         <button class="btn btn-primary" ng-click="adicionarContato(contato)" ng-disabled="!contato.nome || !contato.telefone">Adicionar Contato</button>
+	        </div>
+	         <div ng-show="current.nome">
+	         <h3>Editar</h3>
+	         <li><input class="form-control" type="text" id="fname" ng-model="current.nome" ng-show="current.nome" value="{{current.nome}}"></input></li>
+	         <li><input class="form-control" type="text" id="fname" ng-model="current.telefone" ng-show="current.telefone" value="{{current.telefone}}"></input></li>
+	         <button class="btn btn-success" ne-click="salvar(contato)">Salvar</button>
+	         </div>
+	         
       </div>
   </body>
 </html>
@@ -54,6 +68,18 @@
        		$scope.contatos.splice(index, 1);
 
        };
+
+       $scope.editar = function(contato){
+       		$scope.current = contato;
+
+       };
+
+       $scope.salvar = function(current){
+       	$scope.current = {};
+       	delete $scope.current;
+       };
+
+       $scope.current = {};
 
     });
 </script>
