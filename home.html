@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="">
 <head>
 <meta charset="UTF-8">
 	<title></title>
@@ -9,8 +9,8 @@
 	</style>
 
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-	<script type="text/javascript" src="bootstrap.min.js"></script>
-	<script type="text/javascript" src="angular.min"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="angular.min.js"></script>
 	<style type="text/css">
 	.form-control {
 		width: 300px;
@@ -30,16 +30,16 @@
 <body>
   <div class="menu">	
 	<ul class="nav nav-pills">
-	  <li role="presentation" class="active"><a href="home.html">Home</a></li>
+	  <li role="presentation"><a href="home.html">Home</a></li>
 	  <li role="presentation"><a href="telefones.html">Telefones</a></li>
 	</ul>
   </div>
 
 	<div class="jumbotron">
 	  	<h1>HOME</h1>
-	  	<H2>Ola Fulano</H2>
+	  	<H2>Ola {{nome}}</H2>
 	  	
-	  	<input type="text" class="form-control" placeholder="Input"></input>
+	  	<input type="text" class="form-control" placeholder="Input" ng-model="nome"></input>
 	  	
 	</div>
 </body>
