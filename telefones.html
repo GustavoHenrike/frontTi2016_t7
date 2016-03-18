@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+
+	<style type="text/css">
+	.forme {
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+}
+	</style>
+
+</head>
+<body>
+  <div class="menu">	
+	<ul class="nav nav-pills">
+	  <li role="presentation" class="active"><a href="home.html">Home</a></li>
+	  <li role="presentation"><a href="telefones.html">Telefones</a></li>
+	</ul>
+  </div>
+
+<div class="forme">
+	  	<div>
+			<table class="table table-hover table-striped">
+				<tr>
+					<td>Nome</td>
+					<td>Telefone</td>
+					<td>Ações</td>
+				</tr>
+				<tr>
+					<td>Gustavo</td>
+					<td>98041611</td>
+					<td><button class="btn btn-primary">Editar</button><button class="btn btn-danger">Apagar</button></td>
+				</tr>
+				<tr>
+					<td>Amanda</td>
+					<td>99345673</td>
+					<td><button class="btn btn-primary">Editar</button><button class="btn btn-danger">Apagar</button></td>
+				</tr>
+
+			</table>
+
+		</div>
+		
+
+	  	<form>
+			<div class="form-group">
+				<label>Nome</label>
+				<input class="form-control" type="text"></input>
+			</div>
+			<div class="form-group">
+				<label>Telefone</label>
+				<input class="form-control" type="text"></input>
+			</div>	
+			<button type="submit" class="btn btn-success">Salvar</button>
+		</form>
+</div>
+</body>
+</html>
